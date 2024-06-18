@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaystackWebCheckout.Web", "PaystackWebCheckout.Web\PaystackWebCheckout.Web.csproj", "{CFE36EE4-3111-4C44-9B31-08C83D082B20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlutterwaveCheckout.Web", "FlutterwaveCheckout.Web\FlutterwaveCheckout.Web.csproj", "{5647CBDB-0C44-4423-A06D-C18FE95660B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CFE36EE4-3111-4C44-9B31-08C83D082B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE36EE4-3111-4C44-9B31-08C83D082B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE36EE4-3111-4C44-9B31-08C83D082B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5647CBDB-0C44-4423-A06D-C18FE95660B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5647CBDB-0C44-4423-A06D-C18FE95660B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5647CBDB-0C44-4423-A06D-C18FE95660B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5647CBDB-0C44-4423-A06D-C18FE95660B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
