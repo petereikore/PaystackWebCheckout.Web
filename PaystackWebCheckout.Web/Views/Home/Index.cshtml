@@ -1,0 +1,67 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form Template</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            margin-top: 50px;
+        }
+        .form-group.required .control-label:after {
+            content: "*";
+            color: red;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h2 class="text-center">Bootstrap Form Template</h2>
+        <div>
+            <input type="hidden" asp-for="PublicKey"/>
+            <input type="hidden" asp-for="Reference"/>
+            <div class="form-group required">
+                <label for="name" class="control-label">Name</label>
+                <input type="text" class="form-control"  asp-for="Person.Name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group required">
+                <label for="email" class="control-label">Email</label>
+                <input type="email" class="form-control" asp-for="Person.Email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" asp-for="Person.Phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="dob">Amount</label>
+                <input type="text" class="form-control" asp-for="Person.Amount" placeholder="Enter an Amount">
+            </div>
+            <button type="button" onclick="pay()" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+@section Scripts {
+    <script>
+        function pay() {
+            let email = document.getElementById('Person_Email').value;
+            let phone = document.getElementById('Person_Phone').value;
+            let name = document.getElementById('Person_Name').value;
+            let amount = document.getElementById('Person_Amount').value;
+            let publicKey = document.getElementById('PublicKey').value;
+            let reference = document.getElementById('Reference').value;
+
+            payWithPaystack(publicKey, email, amount, reference);
+        }
+    </script>
+}

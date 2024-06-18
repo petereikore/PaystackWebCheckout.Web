@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "TransactionVerification";
+}
+
+
+<div class="container form-container">
+    <h2 class="text-center">Transaction Verification</h2>
+    <div>
+        <div class="form-group required">
+            <label for="Reference" class="control-label">Reference</label>
+            <input type="text" class="form-control" id="Reference" name="Reference" placeholder="Enter Transaction Reference" required>
+        </div>
+        <div class="form-group required">
+            <label for="Reference" class="control-label">Amount</label>
+            <input type="number" class="form-control" id="Amount" name="Amount" placeholder="Enter the Amount" required>
+        </div>
+        <button type="button" onclick="VerifyTransaction()" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        function VerifyTransaction() {
+            $.ajax({
+                url: `@Url.Action("Verify", "Home")?reference=${$('#Reference').val()}&amount=${$('#Amount').val()}`,
+                type: 'GET',
+                dataType: 'JSON',
+                success: function (result) {
+                    if (result.status) {
+                        window.location.href = '@Url.Action("SuccessfulTransaction", "Home")';
+                    }
+                },
+                error: function (err) {
+                    alert('Could not verify the transaction');
+                }
+            })
+        }
+    </script>
+}
+
