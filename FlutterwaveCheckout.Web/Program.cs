@@ -1,7 +1,13 @@
+using FlutterwaveCheckout.Web;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<FlutterwaveService>();
+builder.Services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 
 var app = builder.Build();
 
