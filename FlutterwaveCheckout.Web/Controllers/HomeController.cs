@@ -27,6 +27,15 @@ namespace FlutterwaveCheckout.Web.Controllers
             return Json(result);
         }
 
+        [HttpGet]
+        public IActionResult TransactionVerification(string status= "successful", string tx_ref = "240618124140581", string transaction_id = "5839554")
+        {
+            ViewBag.Status = status;
+            ViewBag.Reference = tx_ref;
+            ViewBag.TransactionId = transaction_id;
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

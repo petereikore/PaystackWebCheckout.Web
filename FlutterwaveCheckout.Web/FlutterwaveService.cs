@@ -28,7 +28,7 @@ namespace FlutterwaveCheckout.Web
             PaymentLinkResponse result = new();
             try
             {
-                model.redirect_url = $"{BaseUrl}/home/index";
+                model.redirect_url = $"{BaseUrl}/home/TransactionVerification";
                 var client = new HttpClient();
                 var request = new HttpRequestMessage(HttpMethod.Post, "https://api.flutterwave.com/v3/payments");
                 request.Headers.Add("Authorization", $"Bearer {_secret}");
